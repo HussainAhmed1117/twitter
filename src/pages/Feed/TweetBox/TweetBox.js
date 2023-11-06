@@ -17,7 +17,8 @@ function TweetBox() {
     const email = user?.email;
 
 
-    const userProfilePic = loggedInUser[0]?.profileImage ? loggedInUser[0]?.profileImage : "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+    const userProfilePic = loggedInUser[0]?.profileImage ? loggedInUser[0]?.profileImage : 
+    "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
 
     // console.log(user?.providerData[0]?.providerId);
 
@@ -85,7 +86,8 @@ function TweetBox() {
     return <div className="tweetBox">
         <form onSubmit={handleTweet}>
             <div className="tweetBox__input">
-                <Avatar src={loggedInUser[0]?.profileImage ? loggedInUser[0]?.profileImage : "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"} />
+                <Avatar src={loggedInUser[0]?.profileImage ? loggedInUser[0]?.profileImage : 
+                    "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"} />
                 <input
                     type="text"
                     placeholder="What's happening?"
