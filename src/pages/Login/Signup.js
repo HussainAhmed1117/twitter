@@ -5,6 +5,7 @@ import {useCreateUserWithEmailAndPassword, useSignInWithGoogle} from 'react-fire
 import auth from '../../firebase.init';
 import GoogleButton from 'react-google-button';
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 import './Login.css'
 const Signup = () => {
     const [username,setUsername]=useState('');
@@ -37,9 +38,16 @@ const Signup = () => {
   }
   const handleSubmit=e=>{
     e.preventDefault();
-    console.log("clicked");
-    console.log(email,password);
+    //console.log("clicked");
+    //console.log(email,password);
     createUserWithEmailAndPassword(email,password);
+    const user={
+      username:username,
+      name:name,
+      email:email,
+    }
+    const { data } =axios.post(`http://localhost:5000/register`,user);
+    console.log(data); 
   }
   const handleGoogleSignIn=()=>{
       signInWithGoogle();

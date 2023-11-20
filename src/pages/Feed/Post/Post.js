@@ -1,5 +1,5 @@
 import React from "react";
-import "./Post.css";
+import './Post.css';
 import { Avatar } from "@mui/material";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser"
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";

@@ -13,9 +13,12 @@ import Profile from './pages/Profile/Profile';
 import More from './pages/More/More';
 import Feed from './pages/Feed/Feed';
 import Lists from './pages/Lists/Lists';
+import { UserAuthContextProvider } from './context/UserAuthContext';
+
 function App() {
   return (
     <div className="App">
+      <UserAuthContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>}>
@@ -36,6 +39,7 @@ function App() {
           <Route path='/page-loading' element={<PageLoading/>}></Route>
         </Routes>
       </BrowserRouter>
+      </UserAuthContextProvider>
     </div>
   );
 }
